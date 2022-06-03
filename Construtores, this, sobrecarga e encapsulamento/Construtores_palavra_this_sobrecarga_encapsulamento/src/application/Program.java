@@ -27,9 +27,8 @@ public class Program {
 		
 		if (depositoInicial == 's' || depositoInicial == 'S') {
 			System.out.print("Insira o valor do depósito inicial: ");
-			deposito = sc.nextDouble();
-			conta = new Conta(numeroConta, name);
-			conta.deposito(deposito);
+			double valorConta = sc.nextDouble();
+			conta = new Conta(numeroConta, name, valorConta);
 		}else {
 			conta = new Conta(numeroConta, name);
 		}

@@ -13,7 +13,7 @@ public class Conta {
 		super();
 		this.numeroConta = numeroConta;
 		this.titularConta = titularConta;
-		this.valorConta = valorConta;
+		deposito(valorConta);
 	}
 
 	public Conta(int numeroConta, String titularConta) {
@@ -35,10 +35,6 @@ public class Conta {
 
 	public Double getValorConta() {
 		return valorConta;
-	}
-
-	public void setValorConta(Double valorConta) {
-		this.valorConta = valorConta;
 	}
 	
 	public void deposito(double deposito) {
