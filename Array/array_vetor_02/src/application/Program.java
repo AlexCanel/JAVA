@@ -3,6 +3,8 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Products;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -10,26 +12,31 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		
-		double alturaTotal, mediaAltura; 
-		alturaTotal = mediaAltura = 0;
+		double soma;
+		soma = 0;
 		
 		System.out.print("Digite o tamanho do vetor: ");
 		int tamanhoVetor = sc.nextInt();
+
 		
-		double [] vetor = new double [tamanhoVetor];
-		
+		Products [] vetor = new Products [tamanhoVetor];
+			
 		for(int i = 0; i < vetor.length; i++) {
-			System.out.print("Digite a " + (i+1) +"° numero: ");
-			vetor [i] = sc.nextDouble(); 
+			sc.nextLine();
+			System.out.print("Digite o nome: ");
+			String name = sc.nextLine();
+			System.out.print("Digite o preço: ");
+			double price = sc.nextDouble();
+			vetor[i] = new Products(name, price);
 		}
 		
 		for(int i = 0; i < vetor.length; i++) {
-			alturaTotal += vetor[i];	
+			soma += vetor[i].getPrice();
 		}
 		
-		mediaAltura = alturaTotal / vetor.length;
+		soma /= vetor.length;
 		
-		System.out.printf("Resultado: %.2f%n", mediaAltura);
+		System.out.printf("AVERAGE PRICE = %.2f%n", soma);
 		
 		sc.close();
 
