@@ -43,11 +43,14 @@ public class Program {
 		Funcionario emp = funcionario.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 		if(emp != null){
 			System.out.print("Digite o aumento do salario: ");	
-			double aumentoSalario = sc.nextInt();
+			double aumentoSalario = sc.nextDouble();
 			emp.increaseSalary(aumentoSalario);
 		}else {
 			System.out.println("Id inexistente");
 		}
+		
+		System.out.println();
+		System.out.println("Lista de empregados: ");
 		
 		for(Funcionario obj: funcionario) {
 			System.out.println(obj);
